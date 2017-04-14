@@ -99,6 +99,14 @@ public class Screen extends Component {
 		pixels[x + y * img.getWidth()] = hex;
 	}
 
+    public void drawImage(Image img, int x, int y) {
+        for (int i = 0; i < img.getWidth(); i++) {
+            for (int j = 0; j < img.getHeight(); j++){
+                setPixel(x + i, y + j, img.getPixel(i, j));
+            }
+        }
+    }
+
 	public void setTitle(String title) {
 		frame.setTitle(title);
 	}

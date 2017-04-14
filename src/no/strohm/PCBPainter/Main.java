@@ -60,7 +60,6 @@ public class Main implements Runnable {
 
 		main.start();
 	}
-
 	private void start() {
 		new Thread(this).start();
 	}
