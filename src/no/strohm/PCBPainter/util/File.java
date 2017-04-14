@@ -1,4 +1,4 @@
-package no.strohm.PCBPainter;
+package no.strohm.PCBPainter.util;
 
 /**
  * Created by Elias F. Fyksen on 14.04.2017.

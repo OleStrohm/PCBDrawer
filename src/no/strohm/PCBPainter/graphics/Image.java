@@ -1,11 +1,10 @@
-package no.strohm.PCBPainter;
+package no.strohm.PCBPainter.graphics;
 
-import no.strohm.PCBPainter.File;
+import no.strohm.PCBPainter.util.File;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.nio.Buffer;
 
 /**
  * Created by Elias F. Fyksen on 14.04.2017.
