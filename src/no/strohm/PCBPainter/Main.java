@@ -2,6 +2,10 @@ package no.strohm.PCBPainter;
 
 import no.strohm.PCBPainter.graphics.Window;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * Created by Ole on 13.04.2017.
  */
@@ -12,7 +16,7 @@ public class Main implements Runnable {
 	private Window window;
 
 	public Main() {
-		window = new Window(TITLE, 800, 600);
+        window = new Window(TITLE, 800, 600);
 	}
 
 	public void run() {
