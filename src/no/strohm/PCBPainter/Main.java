@@ -7,33 +7,33 @@ import no.strohm.PCBPainter.graphics.Window;
  */
 public class Main implements Runnable {
 
-	private Window window;
-	private boolean running = true;
-	
-	public Main() {
-		window = new Window("Let's make a PCB", 800, 600);
-	}
+    private Window window;
+    private boolean running = true;
 
-	public void run() {
+    public Main() {
+        window = new Window("Let's make a PCB", 800, 600);
+    }
+
+    public void run() {
 
 
-		while(running) {
+        while (running) {
 
-		}
-	}
+        }
+    }
 
-	public static void main(String[] args) {
-		Main main = new Main();
+    public static void main(String[] args) {
+        Main main = new Main();
 
-		main.start();
-	}
+        main.start();
+    }
 
-	private void start() {
-		new Thread(this).start();
-	}
+    private void start() {
+        new Thread(this).start();
+    }
 
-	public void stop() {
-		running = false;
-	}
+    public void stop() {
+        running = false;
+    }
 
 }
