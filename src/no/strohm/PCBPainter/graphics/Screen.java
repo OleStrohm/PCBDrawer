@@ -2,6 +2,8 @@ package no.strohm.PCBPainter.graphics;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
@@ -11,17 +13,33 @@ import java.awt.image.DataBufferInt;
 public class Screen extends Component {
 
 	private JFrame frame;
+	private boolean isClosed = false;
 
 	private BufferedImage img;
 	protected int[] pixels;
 
 	public Screen(String title, int width, int height) {
 		frame = new JFrame(title);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setSize(width, height);
 		frame.setVisible(true);
 		frame.add(this);
+
+		frame.addWindowListener(new WindowAdapter() {
+			// WINDOW_CLOSING event handler
+			@Override
+			public void windowClosing(WindowEvent e) {
+				super.windowClosing(e);
+				isClosed = true;
+			}
+
+			// WINDOW_CLOSED event handler
+			@Override
+			public void windowClosed(WindowEvent e) {
+				super.windowClosed(e);
+			}
+		});
 
 		while (getWidth() == 0) ;
 
@@ -53,6 +71,18 @@ public class Screen extends Component {
 		if (x > img.getWidth() || x < 0 || y > img.getHeight() || y < 0) return;
 
 		pixels[x + y * img.getWidth()] = hex;
+	}
+
+	public void setTitle(String title) {
+		frame.setTitle(title);
+	}
+
+	public boolean isClosed() {
+		return isClosed;
+	}
+
+	public void close() {
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 	}
 
 }

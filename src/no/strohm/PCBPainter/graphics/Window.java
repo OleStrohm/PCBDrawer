@@ -20,11 +20,9 @@ public class Window extends Screen {
 	}
 
 	public void drawRectangle(float xs, float ys, float w, float h, int color) {
-		for(int yp = (int) ys; yp < (int) ys + h; yp++) {
-			for(int xp = (int) xs; xp < (int) xs + w; xp++) {
-				if(yp < 0 || yp >= getHeight() || xp < 0 || xp >= getWidth())
-					continue;
-				pixels[xp + yp * getWidth()] = color;
+		for (int yp = (int) ys; yp < (int) ys + h; yp++) {
+			for (int xp = (int) xs; xp < (int) xs + w; xp++) {
+				setPixel(xp, yp, color);
 			}
 		}
 	}
