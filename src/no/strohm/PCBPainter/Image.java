@@ -1,5 +1,7 @@
 package no.strohm.PCBPainter;
 
+import no.strohm.PCBPainter.File;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
