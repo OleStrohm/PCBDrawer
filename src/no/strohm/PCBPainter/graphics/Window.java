@@ -15,7 +15,7 @@ public class Window extends Screen {
     }
 
     public void render() {
-        drawRectangle(0, 0, getWidth(), getHeight(), 0xFF00FF);
+        drawRectangle(0, 0, getWidth(), getHeight(), 0xffffff);
         //drawImage(nirvana, (getWidth() - nirvana.getWidth()) / 2, (getHeight() - nirvana.getHeight()) / 2);
     }
 
