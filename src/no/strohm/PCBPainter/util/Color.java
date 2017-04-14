@@ -8,7 +8,7 @@ public class Color {
 	private Color() {}
 
 	public static int toInt(float r, float g, float b) {
-		return (r * 255 << 16) + (g * 255 << 8) + (b * 0xFF);
+		return ((int) (r * 255) << 16) + ((int) (g * 255) << 8) + (int) (b * 0xFF);
 	}
 
 }
