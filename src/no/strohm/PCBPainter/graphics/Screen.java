@@ -1,5 +1,7 @@
 package no.strohm.PCBPainter.graphics;
 
+import no.strohm.PCBPainter.util.Vector2f;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -57,6 +59,18 @@ public class Screen extends Component {
 	}
 
 	public void render() {}
+
+	public void drawRectangle(Vector2f pos, Vector2f bounds, int color) {
+		drawRectangle(pos.getX(), pos.getY(), bounds.getX(), bounds.getY(), color);
+	}
+
+	public void drawRectangle(float xs, float ys, float w, float h, int color) {
+		for (int yp = (int) ys; yp < (int) ys + h; yp++) {
+			for (int xp = (int) xs; xp < (int) xs + w; xp++) {
+				setPixel(xp, yp, color);
+			}
+		}
+	}
 
 	public void resized() {
 		img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
