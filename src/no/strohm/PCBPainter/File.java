@@ -10,7 +10,7 @@ public class File extends java.io.File{
         super(compile(m_path));
     }
 
-    public static String compile(String m_path){
+    public static String compile(String m_path) {
         if(!unix) {
             m_path.replace("/", "\\");
         }

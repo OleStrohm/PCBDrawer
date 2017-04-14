@@ -1,42 +1,42 @@
-package no.strohm.PCBPainter.elements;
+package no.strohm.PCBPainter.util;
 
 /**
  * Created by Ole on 14.04.2017.
  */
-public class Point {
+public class Vector2f {
 
 	private float x, y;
 
-	public Point() {
+	public Vector2f() {
 		x = 0.0f;
 		y = 0.0f;
 	}
 
-	public Point(float x, float y) {
+	public Vector2f(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public float distance(Point other) {
+	public float distance(Vector2f other) {
 		return (float) Math.sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
 	}
 
-	public static float distance(Point p1, Point p2) {
+	public static float distance(Vector2f p1, Vector2f p2) {
 		return p1.distance(p2);
 	}
 
-	public Point set(float x, float y) {
+	public Vector2f set(float x, float y) {
 		this.x = x;
 		this.y = y;
 		return this;
 	}
 
-	public Point setX(float x) {
+	public Vector2f setX(float x) {
 		this.x = x;
 		return this;
 	}
 
-	public Point setY(float y) {
+	public Vector2f setY(float y) {
 		this.y = y;
 		return this;
 	}

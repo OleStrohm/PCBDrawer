@@ -1,14 +1,17 @@
 package no.strohm.PCBPainter;
 
+import no.strohm.PCBPainter.graphics.Screen;
+
 /**
  * Created by Ole on 13.04.2017.
  */
 public class Main implements Runnable {
 
+
+
 	private boolean running = true;
 
 	public void run() {
-
 		new Screen();
 
 		while(running) {
