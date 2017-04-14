@@ -72,6 +72,18 @@ public class Screen extends Component {
 		}
 	}
 
+	public void drawLine(float x1, float y1, float x2, float y2, int color) {
+		int dx = (int) (x2 - x1);
+		int dy = (int) (y2 - y1);
+
+		int xp = (int) x1;
+		int yp = (int) y1;
+
+//		while(xp != (int) x2 && yp != (int) y2) {
+//			TODO: make this shit
+//		}
+	}
+
 	public void resized() {
 		img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt) img.getRaster().getDataBuffer()).getData();
