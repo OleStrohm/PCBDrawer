@@ -1,6 +1,6 @@
 package no.strohm.PCBPainter.graphics;
 
-import no.strohm.PCBPainter.util.Vector2f;
+import no.strohm.PCBPainter.util.Color;
 
 /**
  * Created by Ole on 14.04.2017.
@@ -15,7 +15,7 @@ public class Window extends Screen {
     }
 
     public void render() {
-        drawRectangle(0, 0, getWidth(), getHeight(), 0xffffff);
+        drawRectangle(0, 0, getWidth(), getHeight(), Color.toInt(0.15f, 0.3f, 0.8f));
         //drawImage(nirvana, (getWidth() - nirvana.getWidth()) / 2, (getHeight() - nirvana.getHeight()) / 2);
     }
 
